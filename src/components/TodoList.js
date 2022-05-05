@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Table from './TodoTable'
 
 function TodoList(){
     const [desc, setDesc] = useState({text:'',date:''});
@@ -13,6 +14,10 @@ function TodoList(){
         setDesc({...desc, [event.target.name]: event.target.value});
     }
 
+    const onRemove = id => e => {
+        todos.filter(desc => desc.id !== id)
+    }
+
     return(
         <div>
             <label>Description</label>
@@ -23,13 +28,7 @@ function TodoList(){
             <table> 
                 <tbody>
                     <tr><th>Description</th><th>Date</th></tr>
-                    {
-                        todos.map((desc, index) => 
-                            <tr key={index}>
-                                <td>{desc.text}</td>
-                                <td>{desc.date}</td>
-                            </tr>)
-                    }
+                        <Table todos={todos}/>
                 </tbody>
             </table>
         </div>
