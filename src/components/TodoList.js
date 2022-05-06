@@ -3,6 +3,7 @@ import Table from './TodoTable'
 import But from '@mui/material/Button';
 import Text from '@mui/material/TextField';
 import Stack from '@mui/material/Stack'
+import { alpha } from '@material-ui/core/styles';
 
 import { DatePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
@@ -16,6 +17,7 @@ function TodoList(){
 
         setDesc({...desc, strDate: desc.date.toDateString()})
         setTodos([...todos, desc]);
+        console.log("Done")
     }
 
     const inputChanged = (event) => {

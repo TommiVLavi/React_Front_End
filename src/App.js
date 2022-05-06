@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import './App.css';
-import TodoList from './components/TodoList';
+import Tab from './components/Menu';
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
                 <h1 className="App-intro"> Todo List</h1>
             </div>
             
-            <TodoList/>
+            <Tab/>
         </div>
     );
 }

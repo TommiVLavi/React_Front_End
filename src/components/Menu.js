@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
+import List from './TodoList'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 
 function TabMenu() {
-    const [value, setValue] = useState('one');
+    const [value, setValue] = useState('home');
 
-    const handleChange = (event, value) => {
+    const change = (event, value) => {
         setValue(value);
     }
 
     return (
         <div>
-            <Tabs value={value} onChange={handleChange}>
-                <Tab value="one" label="Item One" />
-                <Tab value="two" label="Item Two" />
-                <Tab value="three" label="Item Three" />
+            <Tabs value={value} onChange={change}>
+                <Tab value="home" label="HOME"/>
+                <Tab value="todos" label="TODOS"/>
             </Tabs>
 
-            {value == 'one' && <div>Item One</div> }
-            {value == 'two' && <div>Item Two</div> }
-            {value == 'three' && <div>Item Three</div>}
+            {value == 'home' && <div>Welcome, buddy!</div>}
+            {value == 'todos' && <List/>}
         </div>
     );
 }
