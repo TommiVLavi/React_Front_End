@@ -9,7 +9,7 @@ export default function Todolist(props) {
                     {props.todos.map((desc, index) => 
                     <tr key={index}>
                         <td>{desc.text}</td>
-                        <td>{desc.date}</td>
+                        <td>{desc.strDate}</td>
                         
                     </tr>)}
                 </tbody>
